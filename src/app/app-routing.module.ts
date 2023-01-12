@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
 import { Question1Component } from './pages/question1/question1.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'question1', component: Question1Component },
   { path: 'question2', component: Question1Component },
   // Add routes for the other question components here
