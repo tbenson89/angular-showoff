@@ -7,12 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavComponent implements OnInit {
   isMenuOpen = false;
+  isProfileOpen = false;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
+  // Note: Not using these!
+  // toggleMenu() {
+  //   this.isMenuOpen = !this.isMenuOpen;
+  // }
+
+  // toggle() {
+  //   this.isProfileOpen = !this.isProfileOpen;
+  // }
 }

@@ -1,128 +1,19 @@
-<!-- !important: StOPPED ON nav update adding tailwind -->
 <!-- Note: Also updating homepage and the menulinks :) -->
 <div class="bg-white py-10 sm:py-20 lg:py-10">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="sm:mb-8 sm:flex sm:justify-center">
-            <div class="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                <span class="text-gray-600">
-                    Announcing our next round of funding.
-                    <a href="#" class="font-semibold text-indigo-600">
-                        <span class="absolute inset-0" aria-hidden="true"></span>
-                        Read more
-                        <span aria-hidden="true">&rarr;</span>
-                    </a>
-                </span>
-            </div>
-        </div>
-        <!-- Page Heading Title tagline and summary Text -->
-        <div class="sm:text-center">
-            <h2 class="text-lg font-semibold leading-8 text-indigo-600">
-                Angular is for Lovers
-            </h2>
-            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                A. Tyler Benson Angular Developer
-            </p>
-            <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">
-                A nice playground to show off different angular best practices, personal experience, somewhat of a portfolio project.
-            </p>
-            <div class="mt-8 flex gap-x-4 sm:justify-center">
-                <a href="#" class="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700">
-                    Get started
-                    <span class="text-indigo-200" aria-hidden="true">&rarr;</span>
-                </a>
-                <a href="#"
-                    class="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                    Live demo
-                    <span class="text-gray-400" aria-hidden="true">&rarr;</span>
-                </a>
-            </div>
-        </div>
-        <!-- TODO: come of with good text content to put here! -->
-        <!-- 4 points of angular ? -->
-        <div class="mt-20 max-w-lg sm:mx-auto md:max-w-none">
-            <div class="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16">
-                <!-- Point 1 -->
-                <div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
-                    <!-- SVG icon -->
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0">
-                        <!-- Heroicon name: outline/globe-alt -->
-                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-                        </svg>
-                    </div>
-                    <!-- point title and summary text -->
-                    <div class="sm:min-w-0 sm:flex-1">
-                        <p class="text-lg font-semibold leading-8 text-gray-900">
-                            Point Number 1
-                        </p>
-                        <p class="mt-2 text-base leading-7 text-gray-600">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.
-                        </p>
-                    </div>
-                </div>
-                <!-- Point 2 -->
-                <div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0">
-                        <!-- Heroicon name: outline/scale -->
-                        <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="money-bill-alt" class="h-8 w-8"  role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-                            <path fill="currentColor"
-                                d="M320 144c-53.02 0-96 50.14-96 112 0 61.85 42.98 112 96 112 53 0 96-50.13 96-112 0-61.86-42.98-112-96-112zm48 164.43c0 25.6-22.4 46-48 46s-48-20.4-48-46c0-25.6 22.4-46 48-46s48 20.4 48 46zm-48-214.06c-19.6 0-34.6 16.3-34.6 36s15 36 34.6 36 34.6-16.3 34.6-36-15-36-34.6-36zM608 64H32C14.33 64 0 78.33 0 96v320c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V96c0-17.67-14.33-32-32-32zM48 400v-64c35.35 0 64 28.65 64 64H48zm0-224v-64h64c0 35.35-28.65 64-64 64zm272 208c0 53-43 96-96 96s-96-43-96-96 43-96 96-96 96 43 96 96z">
-                            </path>
-                        </svg>
-                    </div>
-                    <div class="sm:min-w-0 sm:flex-1">
-                        <p class="text-lg font-semibold leading-8 text-gray-900">
-                            Point 2
-                        </p>
-                        <p class="mt-2 text-base leading-7 text-gray-600">
-                            Lorem ipsum, dolor sit amet consectetur
-                            adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate
-                            blanditiis ratione.
-                        </p>
-                    </div>
-                </div>
-                <!-- Point 3 -->
-                <div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0">
-                        <!-- Heroicon name: outline/bolt -->
-                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                        </svg>
-                    </div>
-                    <div class="sm:min-w-0 sm:flex-1">
-                        <p class="text-lg font-semibold leading-8 text-gray-900">
-                            Point 3
-                        </p>
-                        <p class="mt-2 text-base leading-7 text-gray-600">
-                            Lorem ipsum, dolor sit amet consectetur
-                            adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate
-                            blanditiis ratione.
-                        </p>
-                    </div>
-                </div>
-                <!-- Point 4 -->
-                <div class="relative flex flex-col gap-6 sm:flex-row md:flex-col lg:flex-row">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white sm:shrink-0">
-                        <!-- Heroicon name: outline/device-phone-mobile -->
-                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-                        </svg>
-                    </div>
-                    <div class="sm:min-w-0 sm:flex-1">
-                        <p class="text-lg font-semibold leading-8 text-gray-900">
-                            Mobile notifications
-                        </p>
-                        <p class="mt-2 text-base leading-7 text-gray-600">
-                            Lorem ipsum, dolor sit amet consectetur
-                            adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate
-                            blanditiis ratione.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Hero home section -->
+    <app-hero
+        [title]="homeHeroData.title.t2"
+        [tagline]="homeHeroData.tagline"
+        [summary]="homeHeroData.summary"
+        [btn1txt]="homeHeroData.btn1txt"
+        [btn1link]="homeHeroData.btn1link"
+        [btn2txt]="homeHeroData.btn2txt"
+        [btn2link]="homeHeroData.btn2link">
+    </app-hero>
+    <!-- 4 points of angular ? -->
+    <app-point-grid [pointGridData]="pointGridData"></app-point-grid>
 </div>
+<!-- TODO: Move to it's own component -->
 <div class="card-container">
     <div class="card" *ngFor="let question of questions">
         <div class="card-header">
