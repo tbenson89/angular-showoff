@@ -1,6 +1,14 @@
 # AngularShowoff
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+This project is an Angular application that demonstrates different best practices, personal experience, and serves as a portfolio project for an Angular developer.
+
+## Features
+
+- SPA displaying answers to common Angular interview questions
+- Example cards demonstrating use of native CSS
+- Dynamic data passing through the use of Inputs and Outputs
+- Use of Tailwind CSS for styling and layout
+- Angular Lifecycles and Statemanagement
 
 ## Development server
 
