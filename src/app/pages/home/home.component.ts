@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -53,6 +53,11 @@ export class HomeComponent implements OnInit {
       description: 'What are your thoughts on the Angular framework, and why do you prefer it over other front-end technologies?',
       link: 'question2'
     },
+    {
+      title: 'Question 3: Web Services and Unit Testing: A Jedi\'s Playground',
+      description: 'My experience with Angular and web services includes utilizing tools such as HttpClient and RxJS to make API calls, as well as utilizing Jasmine, Karma, and Jest for unit testing. I approach testing with a Jedi\'s precision, ensuring that every aspect of the application is thoroughly tested for optimal performance and user experience.',
+      link: 'question3'
+    }
     // Add the other questions here
   ];
 

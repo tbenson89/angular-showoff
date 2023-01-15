@@ -11,6 +11,7 @@ import { HeroComponent } from './components/hero/hero.component';
 import { HomeComponent } from './pages/home/home.component';
 import { Question1Component } from './pages/question1/question1.component';
 import { PointGridComponent } from './components/point-grid/point-grid.component';
+import { CardGridComponent } from './components/card-grid/card-grid.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PointGridComponent } from './components/point-grid/point-grid.component
     HomeComponent,
     Question1Component,
     PointGridComponent,
+    CardGridComponent,
   ],
   imports: [
     BrowserModule,

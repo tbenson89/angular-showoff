@@ -12,18 +12,8 @@
     </app-hero>
     <!-- 4 points of angular ? -->
     <app-point-grid [pointGridData]="pointGridData"></app-point-grid>
-</div>
-<!-- TODO: Move to it's own component -->
-<div class="card-container">
-    <div class="card" *ngFor="let question of questions">
-        <div class="card-header">
-            {{ question.title }}
-        </div>
-        <div class="card-body">
-            {{ question.description }}
-        </div>
-        <div class="card-footer">
-            <a [routerLink]="question.link">Learn More</a>
-        </div>
+    <!-- Card Grid -->
+    <div class="card-container">
+        <app-card-grid *ngFor="let question of questions" [question]="question"></app-card-grid>
     </div>
 </div>
