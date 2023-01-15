@@ -6,8 +6,9 @@ This project is an Angular application that demonstrates different best practice
 
 - SPA displaying answers to common Angular interview questions
 - Example cards demonstrating use of native CSS
-- Dynamic data passing through the use of Inputs and Outputs
 - Use of Tailwind CSS for styling and layout
+- Dynamic data passing through the use of Inputs and Outputs
+- Use of Jest and Karma for Unit testing
 - Angular Lifecycles and Statemanagement
 
 ## Development server
