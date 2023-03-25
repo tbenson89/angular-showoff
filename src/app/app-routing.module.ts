@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { Question1Component } from './pages/question1/question1.component';
+import { PerformanceComponent } from './performance/performance/performance.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'question1', component: Question1Component },
   { path: 'question2', component: Question1Component },
+  { path: 'performance', component: PerformanceComponent },
   // Add routes for the other question components here
   { path: '', redirectTo: '/', pathMatch: 'full' }
 ];

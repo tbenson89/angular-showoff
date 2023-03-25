@@ -1,0 +1,8 @@
+
+<table>
+    <tbody>
+    <tr>
+        <td *ngFor="let card of cards; let i = index" (click)="flipCard(i)">{{ card }}</td>
+    </tr>
+    </tbody>
+</table>

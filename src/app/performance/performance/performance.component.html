@@ -1,0 +1,52 @@
+<div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mt-10 max-w-lg sm:mx-auto md:max-w-none">
+        <h2 class="text-xl font-semibold leading-9 text-gray-900">
+            Best Performance and Optimization Techniques - Provide support for any issue that arise
+        </h2>
+        <p>
+            We can use a performance module with the onChangeDetection to monitor observables and async pipes that handle data streams, from child components that emit data.
+            <br />
+            <em>* Don't forget to unsubsribe and destroy the subscription since it's async.</em>
+        </p>
+        <h1>Display Trending Coins</h1>
+        <ul *ngIf="coins">
+            <li *ngFor="let coin of coins">
+                <div class="card">
+                <div class="card-left">
+                    <img [src]="coin.thumb">
+                </div>
+                <div class="card-right">
+                    <h3>{{ coin.name }}</h3>
+                    <p>ID: {{ coin.id }}</p>
+                    <p>Symbol: {{ coin.symbol }}</p>
+                </div>
+                </div>
+            </li>
+        </ul>
+        <ul *ngIf="coins">
+            <li *ngFor="let coin of coins">
+                <div class="card">
+                <div class="card-left">
+                    <img [src]="coin.thumb">
+                </div>
+                <div class="card-right">
+                    <h3>{{ coin.name }}</h3>
+                    <p>ID: {{ coin.id }}</p>
+                    <p>Symbol: {{ coin.symbol }}</p>
+                </div>
+                </div>
+            </li>
+        </ul>
+        <h3 class="text-lg font-semibold leading-7 text-gray-800">Note:</h3>
+        <p>
+            This is perfect place for me to work on, it's go Of trxjs observables. Also ChangeDetectionStrategy
+            and a data service to get and show the data.
+            <em>
+                I don't know where to go here really. I know i need some data but what are we doing lol
+            </em>
+        </p>
+        <p>
+            Wowzer I caNNot get the data from the API to display WTF!
+        </p>
+    </div>
+</div>

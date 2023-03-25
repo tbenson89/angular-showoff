@@ -19,6 +19,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Optimization and Monitoring
+
+We created a performance router which we aren't using we have created a performance module, and a performance component.
+
+- **TODO**
+  - Setup Performance with async data from dataService. and display performance data of the application.
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
