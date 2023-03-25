@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-top-nav',
@@ -9,9 +10,11 @@ export class TopNavComponent implements OnInit {
   isMenuOpen = false;
   isProfileOpen = false;
 
-  constructor() {}
+  constructor(private router: RouterModule) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+  }
 
   // Note: Not using these!
   // toggleMenu() {

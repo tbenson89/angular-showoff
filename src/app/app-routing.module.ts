@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './pages/about/about.component';
 import { HomeComponent } from './pages/home/home.component';
 import { Question1Component } from './pages/question1/question1.component';
 import { PerformanceComponent } from './performance/performance/performance.component';
@@ -7,9 +8,8 @@ import { PerformanceComponent } from './performance/performance/performance.comp
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'question1', component: Question1Component },
-  { path: 'question2', component: Question1Component },
+  { path: 'about', component: AboutComponent },
   { path: 'performance', component: PerformanceComponent },
-  // Add routes for the other question components here
   { path: '', redirectTo: '/', pathMatch: 'full' }
 ];
 

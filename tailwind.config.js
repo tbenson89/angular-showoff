@@ -4,6 +4,11 @@ module.exports = {
     './src/**/*.html',
     './src/**/*.scss',
   ],
+  variants: {
+    extend: {
+      textColor: ['active'],
+    }
+  },
   theme: {
     extend: {},
   },

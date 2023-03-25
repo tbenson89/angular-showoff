@@ -21,6 +21,7 @@ import { DarkmodeTogglerComponent } from './components/darkmode-toggler/darkmode
 import { StartsWithFilterTsPipe } from './pipes/starts-with-filter.ts.pipe';
 import { CardComponent } from './components/card/card.component';
 import { WeatherComponent } from './components/weather/weather.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { WeatherComponent } from './components/weather/weather.component';
     StartsWithFilterTsPipe,
     CardComponent,
     WeatherComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
