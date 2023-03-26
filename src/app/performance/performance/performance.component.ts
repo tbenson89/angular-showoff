@@ -13,6 +13,9 @@ import { DataService } from 'src/app/services/data.service';
 export class PerformanceComponent implements OnInit {
   data$: Observable<any> | undefined;
 
+  // TODO: MOVE ALL LISTING LOGIC TO IT"S OWN COMPONENT!
+  listings$: Observable<any> | undefined;
+  users$: Observable<any> | undefined;
 
   constructor(private dataService: DataService) {
     // REMOVED STUFF
@@ -27,11 +30,22 @@ export class PerformanceComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSomeCoins();
+
+    this.getListings();
+    this.getUsers();
+  }
+
+  getListings() {
+    this.listings$ = this.dataService.getAllListings();
+  }
+
+  getUsers() {
+    this.users$ = this.dataService.getAllUsers();
   }
 
   getSomeCoins() {
     this.data$ = this.dataService.getTrendingCoins();
-    console.log(this.data$)
+    // console.log(this.data$)
   }
 
 

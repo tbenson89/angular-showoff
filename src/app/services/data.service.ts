@@ -13,7 +13,30 @@ export class DataService {
   apiUrl = 'https://api.coingecko.com/api/v3/search/trending';
   coins$: any;
 
+  // TODO: MOVE THIS TO A NEW SERVICE!
+  // Create obj with both listings & users
+  grease_base_api = 'http://localhost:3333/';
+  greaseApiPaths = { listing: 'listings', users: 'users/getAllUsers' };
+  listings$: any;
+  users$: any;
+
   constructor(private http: HttpClient) { }
+
+  getAllListings() {
+    this.listings$ = this.http
+      .get(this.grease_base_api + this.greaseApiPaths.listing)
+      .pipe(map(res => res)).subscribe(console.log);
+
+    return this.listings$;
+  }
+
+  getAllUsers() {
+    this.users$ = this.http
+      .get(this.grease_base_api + this.greaseApiPaths.users)
+      .pipe(map((res => res))).subscribe(console.log)
+
+    return this.users$;
+  }
 
   getTrendingCoins() {
     this.coins$ = this.http
