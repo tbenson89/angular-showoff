@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, OnDestroy } from '@angular/core';
-// import { Observable } from 'rxjs/internal/Observable';
+import { Observable } from 'rxjs/internal/Observable';
 // import { of } from 'rxjs/internal/observable/of';
 import { DataService } from 'src/app/services/data.service';
 
@@ -11,12 +11,13 @@ import { DataService } from 'src/app/services/data.service';
   changeDetection: ChangeDetectionStrategy.OnPush, // only updates the component when an input property changes / event is emitted by one of the child components
 })
 export class PerformanceComponent implements OnInit {
-  data$: any;
-  // data$: Observable<any> | undefined;
-  coins: any;
-  coinExample: any;
+  data$: Observable<any> | undefined;
+
 
   constructor(private dataService: DataService) {
+    // REMOVED STUFF
+    // coins: any;
+    // coinExample: any;
     // this.data$ = new Observable((observer) => {
     //   setTimeout(() => {
     //     observer.next('Data Loaded');
@@ -25,16 +26,22 @@ export class PerformanceComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getSomeCoins();
+  }
+
+  getSomeCoins() {
     this.data$ = this.dataService.getTrendingCoins();
-    this.data$.subscribe((data: any) => {
-      const { items }: { items: any[] } = data;
-      this.coins = items;
-      console.log(this.coins);
-    });
+    console.log(this.data$)
   }
 
 
+  // REMOVED STUFFS
   // ngOnInit(): void {
+  // this.data$.subscribe((data: any) => {
+  //   const { items }: { items: any[] } = data;
+  //   this.coins = items;
+  //   console.log(this.coins);
+  // });
   //   this.data$ = this.dataService.getTrendingCoins();
   //   this.data$.subscribe((data: { coins: any; }) => {
   //     this.coins = data.coins;
@@ -52,7 +59,7 @@ export class PerformanceComponent implements OnInit {
   //   });
   // }
 
-  ngOnDestroy(): void {
-    this.data$ = undefined;
-  }
+  // ngOnDestroy(): void {
+  //   this.data$ = undefined;
+  // }
 }

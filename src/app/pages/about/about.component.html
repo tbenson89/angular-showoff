@@ -42,16 +42,146 @@
     </div>
 </div>
 <hr>
-<!-- Video 3 -  -->
-<div class="mx-auto max-w-7xl px-6 lg:px-8" id="">
+<!-- Video 3 - cancatMap/MergeMap NOT REALLY good examples! -->
+<div class="mx-auto max-w-7xl px-6 lg:px-8" id="maps">
     <div class="my-5 max-w-lg sm:mx-auto md:max-w-none">
         <h1 class="text-4xl font-bold leading-7 text-gray-900">
-            Hello rxjs - concatMap Operator
+            Hello rxjs - mergeMap &amp; concatMap
         </h1>
         <p class="mt-5">
-            The first video wasn't very good for me to walkthrough. Trying to find some demos 
+            The first video wasn't very good for me to walkthrough. Trying to find some demos
             and excercise without having to type the form and inputs etc.
         </p>
     </div>
 </div>
 <hr>
+<!-- Video 4 - MonsterLessons Most Needed methods! -->
+<div class="mx-auto max-w-7xl px-6 lg:px-8" id="monster-lessons">
+    <div class="my-5 max-w-lg sm:mx-auto md:max-w-none">
+        <h1 class="text-4xl font-bold leading-7 text-gray-900">
+            Hello rxjs - MonsterLessons Most needed!
+        </h1>
+        <p class="my-5">
+            Learn RxJS Angular and it's most needed features: Async pipe, RxJS pipe, RxJS map, RxJS filter, Behaviorsubject and combinelatest.
+            In RxJS we have hundreds of methods but here we will learn only what you need in everyday use.
+        </p>
+        <hr>
+        <h1 class="mt-5 text-2xl font-bold leading-7 text-gray-900">
+            ASYNC PIPE
+        </h1>
+        <p class="my-5">
+            Shines when we use it together with async / pipe and subsribe as minimally as possible! If you use your own subscribe instead of async pipe, 
+            you have to unsubsribe from the stream/subscription.
+            <br />
+            <br />
+            <strong>
+                * If you use async pipe angular creates a sub -> and destroys when you are destroying your component! <em>NIFTY!</em>
+            </strong>
+        </p>
+        <!-- User Async PIPE example -->
+        <div *ngFor="let user of users$ | async" class="border w-20 mb-5">
+            {{ user.name }}
+        </div>
+        <hr>
+        <h1 class="mt-5 text-xl font-bold leading-7 text-gray-900">
+            RxJS MAP
+        </h1>
+        <p class="my-5">
+            When you want to transform DATA! This will help me work with subscriptions! This is helping me with or without
+            the job i'm looking at, i've been getting a little lost when it comes to async and rxjs in angular lately!
+        </p>
+        <p class="my-5">
+            pipe() is a function to transform and orgnaize 1 by 1 all our functions inside!
+            <br />
+            INSIDE pipe we most commonly use the function = <strong>map()</strong> if we want to transform the data.
+            now we get access to the users inside the map inside the pipe. We can write async code jsut like js.
+        </p>
+        <div class="flex justify-start">
+            <div *ngFor="let user of usernames1$ | async" class="border w-20 mb-5 mx-5">
+                {{ user.name }}
+            </div>
+        </div>
+        <div class="flex justify-start">
+            <div *ngFor="let name of usernames2$ | async" class="border w-20 mb-5 mx-5">
+                {{ name }}
+            </div>
+        </div>
+        <hr>
+        <h1 class="mt-5 text-xl font-bold leading-7 text-gray-900">
+            RxJS Filter
+        </h1>
+        <p class="my-5">
+            It filters the data, it does not work like fitler inside js, when we filter a stream
+            we are just coming through the stream if the statement is true. IF every case is true than it will execute.
+            if even just one fails and is false the code / stream will not execute!
+        </p>
+        <p class="my-5">
+            A function inside filter <strong>MUST</strong> return TRUE or FALSE / so truthy falsy method!
+        </p>
+        <div class="flex justify-start">
+            <div *ngFor="let user of filteredUsers$ | async" class="border w-20 mb-5 mx-5">
+                {{ user }}
+            </div>
+        </div>
+        <hr>
+        <h1 class="mt-5 text-xl font-bold leading-7 text-gray-900">
+            RxJS Behavior Subject
+        </h1>
+        <p class="my-5">
+            we create new behaviourSubject instance - we pass in the object keys/types.
+            <br />
+            by  default its null then after fetch data -> this.data <strong>next()</strong>
+            we can update data in the data we fetched like <kbd>this.user$.next( id: '1': name: 'John' )</kbd>
+            <em>id / name should be in object brackets</em>
+        </p>
+        <!-- BAD CODE -->
+        <p class="my-5">BAD CODE</p>
+        <div *ngIf="user$ | async">
+            {{ (user$ | async)?.name }}
+        </div>
+        <p class="my-5">
+            We want to add more to the ngIf where we can create a scoped this.variable to use instead of creating 
+            two streams/subscriptions!
+        </p>
+        <!-- Good CODE -->
+        <p class="my-5">GOOD CODE</p>
+        <div *ngIf="user$ | async as user" class="mb-10">
+            {{ user.name }}
+        </div>
+        <hr>
+        <h1 class="mt-5 text-xl font-bold leading-7 text-gray-900">
+            RxJS FROM EVENT
+        </h1>
+        <p class="my-5">
+            Helps you work with dom events like streams. documentClick$ fromEvent using dom event. and the click event.
+        </p>
+        <hr>
+        <h1 class="mt-5 text-xl font-bold leading-7 text-gray-900">
+            RxJS Combine Latest
+        </h1>
+        <p class="my-5">
+            COmbining streams of data, combineLatest - typcically take all the streams from the component and put them in to one object.
+        </p>
+        <div *ngIf="data$ | async as data">
+            <div *ngFor="let user of data.users" class="border w-20 my-5">
+                {{ user.name }}
+            </div>
+            <hr>
+            <div *ngFor="let username of data.usernames" class="border w-20 my-5">
+                {{ username.name }}
+            </div>
+            <hr>
+            <div *ngFor="let user of data.filteredUsers" class="my-10">
+                {{ user.name }}
+            </div>
+        </div>
+        <hr>
+        <p class="my-10 text-center">
+            Nice video if needed here is the
+            link -> <a class="text-blue-500" href="https://www.youtube.com/watch?v=2T3F5TfrYwI" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=2T3F5TfrYwI</a>
+        </p>
+    </div>
+</div>
+
+
+

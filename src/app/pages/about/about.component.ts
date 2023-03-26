@@ -5,23 +5,102 @@ import {
   concatMap,
   fromEvent,
   interval,
+  map,
+  filter,
   mergeMap,
   Observable,
   of,
-  timer
+  timer,
+  BehaviorSubject,
+  combineLatest
 } from 'rxjs';
 
+// TODO: Rename and link component/page -> RxJS from about!
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html'
 })
 export class AboutComponent implements OnInit {
   counter: number = 0;
+  users = [
+    { id: 1, name: 'John', isActive: true },
+    { id: 2, name: 'Jack', isActive: true },
+    { id: 3, name: 'Billy', isActive: true },
+  ];
+  // Create stream of data for users map pipe async 2 streams.
+  users$ = of(this.users);
+  // To Transform data using rxjs w/o subs
+  usernames1$ = this.users$.pipe(map((users) => users)); // Note: returns observable obj sub / async pipe to read the data!
+  // Username2 is deprecated but we have stuff in the HTML in the notes so we'll keep it here!
+  usernames2$ = this.users$.pipe(map((users) => users.map((user) => user.name))) // NOTE: returns an array of the names Observable<string[]>
+  // create filter stream! of active users
+  // Note: We can combine the methods to one stream.
+  // Note: I'm going to take the userName2 delete it and move it into filteredUsers$ stream.
+  // Note: After We check if all users are active!
+  filteredUsers$ = this.users$.pipe(
+    filter(users => users.every(user => user.isActive)), // Filter if all users are active
+    // map((users) => users.map((user) => user.name)) // IF SO map/tranform and list only names[] // Note: removed for the combineLatest()
+  );
+  // Create BehaviorSubject Stream of users // Note: You must add the default value(defualt)
+  user$ = new BehaviorSubject<{id: string; name: string} | null>(null);
+  // Create FROMEVENT DOM event stream :)
+  documentClick$ = fromEvent(document, 'click');
+
+  // Create combined stream of ALL streams
+  data$ = combineLatest([
+    this.users$,
+    this.usernames1$,
+    this.filteredUsers$
+  ]).pipe(map(([users, usernames, filteredUsers]) => ({
+    users,
+    usernames,
+    filteredUsers
+  })));
+
 
   constructor(private dataService: DataService) { }
 
-  ngOnInit(): void {
+
+  ngOnInit(): void { }
+
+  updateUserBehaveSubject() {
+    setTimeout(() => {
+      this.user$.next({ id: '4', name: 'Tyler' });
+      this.user$.subscribe((user) => {
+        console.log('User', user);
+      });
+    }, 2000);
+  }
+
+  runDemo() {
+    this.streamsDemo();
+
+    this.multiStreamsDemo();
+
+    this.clickStreamDemo();
+
     this.confusingMergeConcatMaps();
+
+    this.testUsers1();
+
+    this.fromEventDemo();
+
+    this.updateUserBehaveSubject();
+  }
+
+  fromEventDemo() {
+    // FROMEVENT
+    this.documentClick$.subscribe((e) => {
+      console.log('e', e)
+    });
+  }
+
+  testUsers1() {
+    // Below are notes from this YT video: https://youtu.be/2T3F5TfrYwI
+    this.filteredUsers$.subscribe(console.log);
+    this.users$.subscribe(console.log) // NOTE: not intended to use subscribe use ASYNC PIPE! rxjs!
+    this.usernames1$.subscribe(console.log) // NOTE: not intended to use subscribe use ASYNC PIPE! rxjs!
+    this.usernames2$.subscribe(console.log);
   }
 
   confusingMergeConcatMaps() {
@@ -36,14 +115,6 @@ export class AboutComponent implements OnInit {
         catchError((err: { status: any; }) => of(err.status))
       )
       .subscribe(console.log);
-  }
-
-  runDemo() {
-    this.streamsDemo();
-
-    this.multiStreamsDemo();
-
-    this.clickStreamDemo();
   }
 
   clickStreamDemo() {

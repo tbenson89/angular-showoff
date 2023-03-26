@@ -8,45 +8,30 @@
             <br />
             <em>* Don't forget to unsubsribe and destroy the subscription since it's async.</em>
         </p>
-        <h1 class="text-xl font-semibold leading-7 text-gray-800">Display Trending Coins</h1>
-        <ul *ngIf="coins">
-            <li *ngFor="let coin of coins">
-                <div class="card">
-                <div class="card-left">
-                    <img [src]="coin.thumb">
+        <h1 class="text-xl font-semibold leading-7 text-gray-800 mt-10">Display Trending Coins</h1>
+        <div *ngIf="data$ | async as coins" class="flex flex-wrap justify-between">
+            <div *ngFor="let coin of coins">
+                <div class="max-w-sm rounded overflow-hidden shadow-lg m-10">
+                    <img [src]="coin.item.small" class="float-right">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">
+                            <h3>{{ coin.item.name }}</h3>
+                        </div>
+                    </div>
+                    <div class="px-6 pt-4 pb-2">
+                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                            #{{ coin.item.id }}
+                        </span>
+                        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                            #{{ coin.item.symbol }}
+                        </span>
+                    </div>
                 </div>
-                <div class="card-right">
-                    <h3>{{ coin.name }}</h3>
-                    <p>ID: {{ coin.id }}</p>
-                    <p>Symbol: {{ coin.symbol }}</p>
-                </div>
-                </div>
-            </li>
-        </ul>
-        <ul *ngIf="coins">
-            <li *ngFor="let coin of coins">
-                <div class="card">
-                <div class="card-left">
-                    <img [src]="coin.thumb">
-                </div>
-                <div class="card-right">
-                    <h3>{{ coin.name }}</h3>
-                    <p>ID: {{ coin.id }}</p>
-                    <p>Symbol: {{ coin.symbol }}</p>
-                </div>
-                </div>
-            </li>
-        </ul>
+            </div>
+        </div>
         <h3 class="text-lg font-semibold leading-7 text-gray-800">Note:</h3>
         <p>
-            This is perfect place for me to work on, it's go Of trxjs observables. Also ChangeDetectionStrategy
-            and a data service to get and show the data.
-            <em>
-                I don't know where to go here really. I know i need some data but what are we doing lol
-            </em>
-        </p>
-        <p>
-            Wowzer I caNNot get the data from the API to display WTF!
+            What was I doing with -> ChangeDetectionStrategy?
         </p>
     </div>
 </div>
