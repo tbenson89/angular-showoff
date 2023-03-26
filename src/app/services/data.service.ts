@@ -15,8 +15,18 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getTrendingCoins(): Observable<{items: any[]}> {
-    return this.http.get<{items: any[]}>(this.apiUrl);
+    const data = this.http.get<{items: any[]}>(this.apiUrl);
+    
+    console.log(data);
+    return data;
   }
+
+  // Following along with a video about mergeMap/concatMap rxjs
+  getData() {
+    const data = this.http.get(this.apiUrl);
+    return data;
+  }
+
 
   // getTrendingCoins() {
   //   const trendingTokens = this.http
