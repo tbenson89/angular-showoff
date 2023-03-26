@@ -1,0 +1,36 @@
+<div class="bg-white py-10 sm:py-20 lg:py-10">
+    <!-- Hero home section -->
+    <app-hero
+        [title]="homeHeroData.title.t2"
+        [tagline]="homeHeroData.tagline"
+        [summary]="homeHeroData.summary"
+        [btn1txt]="homeHeroData.btn1txt"
+        [btn1link]="homeHeroData.btn1link"
+        [btn2txt]="homeHeroData.btn2txt"
+        [btn2link]="homeHeroData.btn2link">
+    </app-hero>
+    <!-- Dark Mode Toggler -->
+    <div class="py-10 sm:py-20 lg:py-10">
+        <app-darkmode-toggler (stateChanged)="handleStateChange($event)" class="flex justify-center text-center"></app-darkmode-toggler>
+    </div>
+    <!-- 4 points of angular ? -->
+    <app-point-grid [pointGridData]="pointGridData"></app-point-grid>
+    <!-- Card Grid -->
+    <div class="card-container">
+        <app-card-grid *ngFor="let question of questions" [question]="question"></app-card-grid>
+    </div>
+    <!-- Weather / flip cards city pipe! -->
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mt-20 max-w-lg sm:mx-auto md:max-w-none">
+            <p class="text-lg font-semibold leading-8 text-gray-900">
+                Hello Friend!
+            </p>
+            <h2 class="mt-2 text-base leading-7 text-gray-600">{{ ["City: New York", "City details: None", "Cargo type: fragile"] | startsWithFilterPipe:"Ci" }}</h2>
+            <p class="flex flex-row">
+                This is just a flip card starter not sure where we want to go with it! => <app-card [count]="4"></app-card>
+            </p>
+            <h3 class="text-lg font-semibold leading-8 text-gray-900">Weather Form:</h3>
+            <app-weather></app-weather>
+        </div>
+    </div>
+</div>

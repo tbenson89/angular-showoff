@@ -1,0 +1,31 @@
+.topnav {
+    background-color: #3f51b5;/* change the background color */
+    display: flex;/* use flexbox to align the elements horizontally */
+    align-items: center;/* center the elements vertically */
+    padding: 10px;
+    min-height: 8vh;
+
+    /* add some padding for spacing */
+    .brand-name {
+        color: white;/* change the color of the brand name */
+        font-size: 20px;/* increase the font size */
+        margin-right: auto;/* push the brand name to the left */
+    }
+
+    .nav-links {
+        list-style: none;/* remove bullet points from the links */
+        margin-left: auto;
+
+        /* push the links to the right */
+        a {
+            color: white;/* change the color of the links */
+            text-decoration: none;/* remove underline from links */
+            padding: 10px;
+
+            /* add some padding for spacing */
+            &:hover {
+                background-color: #6e7ff6;/* change the background color of the links when hovered over */
+            }
+        }
+    }
+}

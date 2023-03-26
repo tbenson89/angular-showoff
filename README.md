@@ -1,6 +1,15 @@
 # AngularShowoff
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+This project is an Angular application that demonstrates different best practices, personal experience, and serves as a portfolio project for an Angular developer.
+
+## Features
+
+- SPA displaying answers to common Angular interview questions
+- Example cards demonstrating use of native CSS
+- Use of Tailwind CSS for styling and layout
+- Dynamic data passing through the use of Inputs and Outputs
+- Use of Jest and Karma for Unit testing
+- Angular Lifecycles and Statemanagement
 
 ## Development server
 
@@ -9,6 +18,13 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Optimization and Monitoring
+
+We created a performance router which we aren't using we have created a performance module, and a performance component.
+
+- **TODO**
+  - Setup Performance with async data from dataService. and display performance data of the application.
 
 ## Build
 
