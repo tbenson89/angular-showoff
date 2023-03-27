@@ -32,9 +32,43 @@
         </div>
         <h3 class="text-lg font-semibold leading-7 text-gray-800 mt-10">Grease App Listings</h3>
         <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam omnis similique, voluptatibus quisquam eum eius quos perferendis alias mollitia iure neque ipsa ratione molestias atque officiis nam architecto distinctio. Neque.
+            Here we are working on a renewable energy auction application in IONIC angular using express API,
+            this is connecting to that API.
         </p>
-        
+        <div *ngIf="listings$ | async as listings" class="flex flex-wrap justify-center">
+            <div *ngFor="let listing of listings">
+                <div class="max-w-sm rounded overflow-hidden shadow-lg m-10">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">
+                            <h3>{{ listing.auctionTitle }}</h3>
+                        </div>
+                        <span>Price: {{ listing.price | currency }}</span> | QTY: <span>{{ listing.quantity }}</span>
+                    </div>
+                    <div class="px-6 py-4">
+                        <div class="font-500 mb-2">
+                            <p>{{ listing.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3 class="text-lg font-semibold leading-7 text-gray-800 mt-10">Grease App Users</h3>
+        <div *ngIf="users$ | async as users" class="flex">
+            <div *ngFor="let user of users">
+                <div class="max-w-sm rounded overflow-hidden bg-green-500 shadow-lg m-10 py-4 px-2">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">
+                            <h3>{{ user.name }}</h3>
+                        </div>
+                    </div>
+                    <div class="px-6 py-4">
+                        <div class="font-500 mb-2">
+                            <p>{{ user.role }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <h3 class="text-lg font-semibold leading-7 text-gray-800 mt-20">Note:</h3>
         <p>
             What was I doing with -> ChangeDetectionStrategy?

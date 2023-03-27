@@ -25,7 +25,7 @@ export class DataService {
   getAllListings() {
     this.listings$ = this.http
       .get(this.grease_base_api + this.greaseApiPaths.listing)
-      .pipe(map(res => res)).subscribe(console.log);
+      .pipe(map(res => res));
 
     return this.listings$;
   }
@@ -33,7 +33,7 @@ export class DataService {
   getAllUsers() {
     this.users$ = this.http
       .get(this.grease_base_api + this.greaseApiPaths.users)
-      .pipe(map((res => res))).subscribe(console.log)
+      .pipe(map((res => res)))
 
     return this.users$;
   }

@@ -12,7 +12,9 @@ import {
   of,
   timer,
   BehaviorSubject,
-  combineLatest
+  combineLatest,
+  tap,
+  shareReplay
 } from 'rxjs';
 
 // TODO: Rename and link component/page -> RxJS from about!
@@ -61,7 +63,17 @@ export class AboutComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+    // WOrking on Errors
+    const http$ = this.dataService.getAllUsers();
+    const usrs$: Observable<any> = http$
+      .pipe(
+        tap(() => console.log("HTTP request executed")),
+        map(res => Object.values(document)),
+        shareReplay()
+      )
+  }
 
   updateUserBehaveSubject() {
     setTimeout(() => {
