@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-// import { of } from 'rxjs/internal/observable/of';
 import { DataService } from 'src/app/services/data.service';
 
 // Implement the OnPush change detection strategy by setting the changeDetection

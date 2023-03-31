@@ -17,7 +17,7 @@ import {
   shareReplay
 } from 'rxjs';
 
-// TODO: Rename and link component/page -> RxJS from about!
+// TODO: Rename and link component/page === RxJS from about!
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html'

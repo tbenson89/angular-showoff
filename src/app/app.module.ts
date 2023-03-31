@@ -22,6 +22,8 @@ import { StartsWithFilterTsPipe } from './pipes/starts-with-filter.ts.pipe';
 import { CardComponent } from './components/card/card.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import { AboutComponent } from './pages/about/about.component';
+import { PracticeComponent } from './pages/practice/practice.component';
+import { QuantityLabelComponent } from './components/quantity-label/quantity-label.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { AboutComponent } from './pages/about/about.component';
     CardComponent,
     WeatherComponent,
     AboutComponent,
+    PracticeComponent,
+    QuantityLabelComponent,
   ],
   imports: [
     BrowserModule,

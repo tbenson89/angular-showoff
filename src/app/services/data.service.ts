@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { map, Observable, catchError } from 'rxjs';
 
 interface CoinsResponse {
   coins: any[];
@@ -52,10 +52,16 @@ export class DataService {
   }
 
   // getTrendingCoins(): Observable<{items: any[]}> {
-  //   const data = this.http.get<{items: any[]}>(this.apiUrl);
+  //   const data = this.http.get(this.apiUrl);
     
   //   console.log(data);
   //   return data;
   // }
-
 }
+
+
+  // NOTE: SAVE catchError
+  // catchError(error => {
+  //   console.log('Caught in CatchError. Returning 0')
+  //   return of(0);     //return from(['A','B','C'])
+  // })
